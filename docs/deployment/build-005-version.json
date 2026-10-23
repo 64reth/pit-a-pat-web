@@ -1,0 +1,114 @@
+{
+  "id": "1273602d-90ca-4e50-b97a-3660a0c95914",
+  "number": 2,
+  "metadata": {
+    "created_on": "2026-10-23T17:01:44.614002Z",
+    "source": "wrangler",
+    "author_id": "1a0c8073dedf544d0819f072c6637caf",
+    "author_email": "garetha81@gmail.com",
+    "has_preview": false
+  },
+  "annotations": {
+    "workers/message": "Build 005 staging 91d1e3a; large-hand correction; funded matches disabled",
+    "workers/tag": "91d1e3a",
+    "workers/triggered_by": "upload"
+  },
+  "resources": {
+    "script": {
+      "etag": "626f5a503ddf40b8a087d3965b881c32553cc8e8458981e32577df498c354c87",
+      "handlers": [
+        "fetch"
+      ],
+      "named_handlers": [
+        {
+          "name": "Account",
+          "handlers": [
+            "class"
+          ]
+        },
+        {
+          "name": "GameRoom",
+          "handlers": [
+            "class"
+          ]
+        }
+      ],
+      "last_deployed_from": "wrangler"
+    },
+    "script_runtime": {
+      "exports": {
+        "Account": {
+          "type": "durable-object",
+          "storage": "sqlite"
+        },
+        "GameRoom": {
+          "type": "durable-object",
+          "storage": "sqlite"
+        }
+      },
+      "assets": {
+        "not_found_handling": "single-page-application",
+        "static_routing": {
+          "user_worker": [
+            "/api/*"
+          ]
+        },
+        "serve_directly": true,
+        "raw_run_worker_first": [
+          "/api/*"
+        ],
+        "base_path": "/"
+      },
+      "compatibility_date": "2026-09-28",
+      "usage_model": "standard"
+    },
+    "bindings": [
+      {
+        "class_name": "Account",
+        "name": "ACCOUNTS",
+        "namespace_id": "b09aef3ec16942f2aa92989125c09087",
+        "type": "durable_object_namespace"
+      },
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "name": "DEPLOYMENT_ENVIRONMENT",
+        "text": "staging",
+        "type": "plain_text"
+      },
+      {
+        "name": "FUNDED_MATCHES_ENABLED",
+        "text": "false",
+        "type": "plain_text"
+      },
+      {
+        "name": "RECONNECT_GRACE_MS",
+        "text": "120000",
+        "type": "plain_text"
+      },
+      {
+        "name": "ROOM_IDLE_MS",
+        "text": "1800000",
+        "type": "plain_text"
+      },
+      {
+        "name": "ROOM_RETENTION_MS",
+        "text": "86400000",
+        "type": "plain_text"
+      },
+      {
+        "class_name": "GameRoom",
+        "name": "ROOMS",
+        "namespace_id": "f94b7578e96a4522b3d1f569fab51808",
+        "type": "durable_object_namespace"
+      },
+      {
+        "name": "STAKE_TIERS",
+        "text": "10,25,50",
+        "type": "plain_text"
+      }
+    ]
+  }
+}

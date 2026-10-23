@@ -1,0 +1,47 @@
+{
+  "origin": "https://pit-a-pat-online-staging.garetha81.workers.dev",
+  "report": [
+    {
+      "width": 667,
+      "height": 375,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    },
+    {
+      "width": 740,
+      "height": 360,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    },
+    {
+      "width": 932,
+      "height": 430,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "cards": 5,
+      "allSelectable": true,
+      "noPageScroll": true
+    }
+  ]
+}

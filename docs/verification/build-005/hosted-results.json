@@ -1,0 +1,53 @@
+{
+  "origin": "https://pit-a-pat-online-staging.garetha81.workers.dev",
+  "sourceBuild": "d7cd9b90fbde",
+  "capabilities": {
+    "fundedMatches": false,
+    "environment": "staging"
+  },
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "hands": 4,
+      "overlays": 3,
+      "effects": [
+        "skip",
+        "reverse",
+        "draw-two"
+      ],
+      "inviteWorks": true,
+      "reconnect": true,
+      "reserved": [
+        0,
+        0
+      ],
+      "rewardChips": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "custom",
+      "mode": "chains",
+      "hands": 3,
+      "overlays": 2,
+      "effects": [
+        "reverse",
+        "draw-two"
+      ],
+      "inviteWorks": true,
+      "reconnect": true,
+      "reserved": [
+        0,
+        0
+      ],
+      "rewardChips": [
+        5,
+        10
+      ]
+    }
+  ],
+  "errors": [],
+  "fundedRefunds": "Not enabled or tested publicly; zero-stake championships only."
+}

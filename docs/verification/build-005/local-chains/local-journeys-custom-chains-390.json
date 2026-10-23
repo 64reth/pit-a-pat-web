@@ -1,0 +1,24 @@
+{
+  "origin": "https://pit-a-pat-online-staging.garetha81.workers.dev",
+  "results": [
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 3,
+      "width": 390,
+      "sourceBuild": "d7cd9b90fbde",
+      "steps": 474,
+      "handModals": 4,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "dfa4ac20-63bf-4a37-9ded-44e87135fb11",
+      "roster": [
+        "You",
+        "Sade",
+        "Nana"
+      ],
+      "effects": []
+    }
+  ],
+  "errors": []
+}

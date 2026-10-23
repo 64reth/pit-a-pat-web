@@ -1,0 +1,29 @@
+{
+  "origin": "https://pit-a-pat-online-staging.garetha81.workers.dev",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "sourceBuild": "d6feea86d804",
+      "steps": 1978,
+      "handModals": 4,
+      "humanWins": 0,
+      "championships": 1,
+      "initialMatch": "8d26a7ef-073a-415e-ab51-792341a1073e",
+      "roster": [
+        "You",
+        "Imani",
+        "Eshe",
+        "Tunde"
+      ],
+      "effects": [
+        "reverse",
+        "skip",
+        "draw-two"
+      ]
+    }
+  ],
+  "errors": []
+}

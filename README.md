@@ -1,3 +1,7 @@
+Live zero-stake staging: https://pit-a-pat-online-staging.garetha81.workers.dev
+
+[Build 005 deployment and verification](docs/deployment/BUILD-005-STAGING.md). Funded online matches remain disabled pending hosted recovery and abandonment review.
+
 # Pit-a-Pat · Build 004D
 
 Quick Play and Custom Table are distinct game types, each with Local and Online routes. Quick Play uses Traditional rules and one fixed 25-chip championship buy-in. Custom Tables choose Traditional/Chains, seats and equal hand antes. Commitments happen at the tabletop before any deal. Hand and championship outcomes appear as overlays over the same mounted table. Activated 2/8/10 cards rise with +2/SKIP/REVERSE markers, target seats and animate card movement; bots use the full approved 16-name roster.
