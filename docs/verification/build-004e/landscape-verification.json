@@ -1,0 +1,107 @@
+{
+  "penalties": 6,
+  "actions": [
+    "reverse",
+    "skip",
+    "draw-two"
+  ],
+  "layouts": [
+    {
+      "label": "five-card",
+      "width": 667,
+      "height": 375,
+      "cards": 5,
+      "scroll": 375,
+      "hand": {
+        "top": 209,
+        "bottom": 371,
+        "scroll": 497
+      }
+    },
+    {
+      "label": "five-card",
+      "width": 740,
+      "height": 360,
+      "cards": 5,
+      "scroll": 360,
+      "hand": {
+        "top": 194,
+        "bottom": 356,
+        "scroll": 570
+      }
+    },
+    {
+      "label": "five-card",
+      "width": 844,
+      "height": 390,
+      "cards": 5,
+      "scroll": 390,
+      "hand": {
+        "top": 224,
+        "bottom": 386,
+        "scroll": 674
+      }
+    },
+    {
+      "label": "five-card",
+      "width": 932,
+      "height": 430,
+      "cards": 5,
+      "scroll": 430,
+      "hand": {
+        "top": 264,
+        "bottom": 426,
+        "scroll": 700
+      }
+    },
+    {
+      "label": "large-hand",
+      "width": 667,
+      "height": 375,
+      "cards": 10,
+      "scroll": 375,
+      "hand": {
+        "top": 209,
+        "bottom": 371,
+        "scroll": 666
+      }
+    },
+    {
+      "label": "large-hand",
+      "width": 740,
+      "height": 360,
+      "cards": 10,
+      "scroll": 360,
+      "hand": {
+        "top": 194,
+        "bottom": 356,
+        "scroll": 666
+      }
+    },
+    {
+      "label": "large-hand",
+      "width": 844,
+      "height": 390,
+      "cards": 10,
+      "scroll": 390,
+      "hand": {
+        "top": 224,
+        "bottom": 386,
+        "scroll": 674
+      }
+    },
+    {
+      "label": "large-hand",
+      "width": 932,
+      "height": 430,
+      "cards": 10,
+      "scroll": 430,
+      "hand": {
+        "top": 264,
+        "bottom": 426,
+        "scroll": 700
+      }
+    }
+  ],
+  "rotations": 8
+}

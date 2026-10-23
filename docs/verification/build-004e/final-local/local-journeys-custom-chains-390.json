@@ -1,0 +1,24 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 3,
+      "width": 390,
+      "sourceBuild": "22a31afed16d",
+      "steps": 333,
+      "handModals": 4,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "5cc0ab72-f5d3-4c0d-94b3-bb55b6978a93",
+      "roster": [
+        "You",
+        "Ayana",
+        "Eshe"
+      ],
+      "effects": []
+    }
+  ],
+  "errors": []
+}

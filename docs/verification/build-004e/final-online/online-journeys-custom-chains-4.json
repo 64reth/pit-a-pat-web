@@ -1,0 +1,28 @@
+{
+  "origin": "http://127.0.0.1:8792",
+  "funding": "Isolated test accounts earned via validated Account.settleChampionship RPC fixtures; all room gameplay and transitions driven through UI, no room-state injection.",
+  "results": [
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 4,
+      "steps": 136,
+      "hands": 8,
+      "pot": 320,
+      "standings": [
+        2,
+        1,
+        3,
+        2
+      ],
+      "effects": {
+        "draw-two": 5,
+        "skip": 5,
+        "reverse": 4,
+        "twoPlayerReverse": 0
+      },
+      "recovered": true
+    }
+  ],
+  "errors": []
+}

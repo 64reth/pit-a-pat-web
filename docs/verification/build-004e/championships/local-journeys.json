@@ -1,0 +1,79 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "sourceBuild": "934f7c03f68b",
+      "steps": 618,
+      "handModals": 5,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "94152ebf-3fa3-4586-9e1d-980ba5c77e17",
+      "roster": [
+        "You",
+        "Sade",
+        "Nia",
+        "Kofi"
+      ],
+      "effects": []
+    },
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 390,
+      "sourceBuild": "934f7c03f68b",
+      "steps": 402,
+      "handModals": 3,
+      "humanWins": 0,
+      "championships": 1,
+      "initialMatch": "138ae961-4f49-4ead-8dab-4ebb5f48d282",
+      "roster": [
+        "You",
+        "Kojo",
+        "Malik",
+        "Ayo"
+      ],
+      "effects": []
+    },
+    {
+      "type": "custom",
+      "mode": "traditional",
+      "seats": 2,
+      "width": 1440,
+      "sourceBuild": "934f7c03f68b",
+      "steps": 154,
+      "handModals": 3,
+      "humanWins": 2,
+      "championships": 1,
+      "initialMatch": "adae1036-b55e-4418-9cdb-86a207823f64",
+      "roster": [
+        "You",
+        "Imani"
+      ],
+      "effects": []
+    },
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 3,
+      "width": 390,
+      "sourceBuild": "934f7c03f68b",
+      "steps": 381,
+      "handModals": 5,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "160d4b07-1176-4278-956e-e65887a7cb67",
+      "roster": [
+        "You",
+        "Kwame",
+        "Imani"
+      ],
+      "effects": []
+    }
+  ],
+  "errors": []
+}

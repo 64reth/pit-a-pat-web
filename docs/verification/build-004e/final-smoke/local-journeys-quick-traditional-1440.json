@@ -1,0 +1,25 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "sourceBuild": "72c91f50af29",
+      "steps": 904,
+      "handModals": 7,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "f3083865-9067-4c90-bff7-9d86c3ef73d4",
+      "roster": [
+        "You",
+        "Zuri",
+        "Nana",
+        "Eshe"
+      ],
+      "effects": []
+    }
+  ],
+  "errors": []
+}
