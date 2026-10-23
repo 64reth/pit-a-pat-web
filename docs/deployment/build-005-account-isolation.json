@@ -1,0 +1,23 @@
+{
+  "accountId": "203bf3287fc4eb1260ec344a3e0f5071",
+  "ludiWorkerPresent": true,
+  "stagingWorker": "pit-a-pat-online-staging",
+  "stagingNamespaces": [
+    {
+      "id": "b09aef3ec16942f2aa92989125c09087",
+      "name": "pit-a-pat-online-staging_Account",
+      "script": "pit-a-pat-online-staging",
+      "class": "Account",
+      "use_sqlite": true
+    },
+    {
+      "id": "f94b7578e96a4522b3d1f569fab51808",
+      "name": "pit-a-pat-online-staging_GameRoom",
+      "script": "pit-a-pat-online-staging",
+      "class": "GameRoom",
+      "use_sqlite": true
+    }
+  ],
+  "sharedWithLudi": false,
+  "ludiOperations": "Read-only Worker/namespace metadata listing; no configuration or data mutations"
+}

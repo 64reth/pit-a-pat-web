@@ -31,9 +31,11 @@ No application secret is required by this build. Browser session secrets are gen
 
 ## Authentication and deployment method
 
-GitHub CLI was logged out, but Git's existing credential helper successfully pushed and remote hashes were checked. Wrangler 4.152.0 was already authenticated to the owner's account. The separate `cf` CLI had no profile. Automatic approval review rejected an attempted credential-transfer approach; it was not executed or retried. Deployment used Wrangler's own supported login path without extracting credentials.
+GitHub CLI was logged out, but Git's existing credential helper successfully pushed and remote hashes were checked. Wrangler 4.152.0 was already authenticated to the owner's account. At initial upload the separate `cf` CLI had no profile. The owner subsequently completed `cf auth login`; its read-only account/Worker/namespace checks confirmed the same account hosts both `ludi` and the independent `pit-a-pat-online-staging` Worker. LUDI has its own `LudiRoom` namespace, separate from both new Pit-a-Pat namespaces. No LUDI configuration or stored data was read or modified; only account resource metadata was listed. Automatic approval review rejected an attempted credential-transfer approach; it was not executed or retried. Deployment used Wrangler's own supported login path without extracting credentials.
 
 The source project continues to use `cloudflare.config.ts` and `cloudflare.staging.config.ts`. For authenticated Wrangler deployment, `scripts/prepare-staging-wrangler.mjs` converts only the preflight-validated staging Build Output into an explicit ignored `artifacts/staging-wrangler/wrangler.jsonc`. It pins the staging Worker/account, separate class bindings, SQLite exports, assets and the funded gate. It never reads credentials. This avoids Wrangler ignoring the project's typed cf configuration.
+
+The `cf` login is now available. Prefer the source project’s normal `npm run prepare:staging` followed by `npx cf deploy --prebuilt --mode staging --dry-run`, then the reviewed `npx cf deploy --prebuilt --mode staging`. The authenticated Wrangler fallback used for these uploads remains reproducible below.
 
 Rebuild and review before any subsequent staging deployment:
 
