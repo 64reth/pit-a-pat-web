@@ -84,3 +84,5 @@
 @media(max-width:650px) and (orientation:portrait){
  .online-live:has(.online-hand) .online-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:34px 36px;height:74px;gap:0 6px}.online-live:has(.online-hand) .online-heading>div{grid-column:1;grid-row:1}.online-live:has(.online-hand) .online-heading .table-mobile-menu{grid-column:2;grid-row:1}.online-live:has(.online-hand) .online-heading>.button{grid-column:1;grid-row:2;justify-self:start}.online-live:has(.online-hand) .online-match-grid{height:calc(100dvh - 74px)}.online-live:has(.online-hand) .online-match-grid>aside{top:36px}.online-live:has(.online-hand) .orientation-hint{top:82px}.online-live:has(.online-hand) .online-seats{top:150px}
 }
+/* Keep large online hands inside their own scroll surface, including desktop. */
+.online-match-grid>div{min-width:0}.online-card-table{min-width:0;max-width:100%}.online-hand{justify-content:safe center;max-width:100%;scroll-padding-inline:12px;overscroll-behavior-inline:contain}

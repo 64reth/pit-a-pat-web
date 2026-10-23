@@ -1,6 +1,6 @@
 import {chromium} from 'playwright';import {rolldown} from 'rolldown';import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';
 const bundle=await rolldown({input:'scripts/flow-driver.ts'});await bundle.write({file:'.server/flow-driver.mjs',format:'esm'});await bundle.close();const {localDecision}=await import('../.server/flow-driver.mjs');
-const origin='http://127.0.0.1:8788',out=process.env.PITAPAT_EVIDENCE_DIR||'docs/verification/build-004d-complete';await mkdir(out,{recursive:true});const browser=await chromium.launch({channel:'chrome',headless:true}),errors=[],results=[];
+const origin=process.env.PITAPAT_HOSTED_ORIGIN||'http://127.0.0.1:8788',out=process.env.PITAPAT_EVIDENCE_DIR||'docs/verification/build-004d-complete';await mkdir(out,{recursive:true});const browser=await chromium.launch({channel:'chrome',headless:true}),errors=[],results=[];
 const profile=p=>p.evaluate(()=>JSON.parse(localStorage.getItem('pitapat.profile.v1')));
 async function snap(p,name){await p.locator('.staking-drawer:not(.is-retracting)').evaluateAll(els=>Promise.all(els.flatMap(el=>el.getAnimations().map(a=>a.finished.catch(()=>{})))));await p.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(img=>img.decode().catch(()=>{}))));assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),name+' overflow');await p.screenshot({path:`${out}/${name}.png`,fullPage:true});}
 async function visibleButton(p,name){return p.getByRole('button',{name,exact:true}).filter({visible:true});}
