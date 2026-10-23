@@ -1,6 +1,12 @@
 # Build 004D — completed local experience and staging preparation
 
-Local preview: **http://127.0.0.1:8788**. Verified source build: **34627c7bdbc5**, exposed by the home footer, `.app[data-build]` and `/build-info.json`.
+Local preview: **http://127.0.0.1:8788**. Verified source build: **3c7f2ef49586**, exposed by the home footer, `.app[data-build]` and `/build-info.json`.
+
+## Latest attached-brief correction
+
+The previous implementation paused at a separate Start hand button after all commitments. The latest brief explicitly requires direct dealing. Local confirmation now commits stakes and creates the hand in one persisted wallet transition. Online Quick Play and Custom Table rooms advance on the server after the last required connected player confirms; initial reservation intent and the triggering action receipt are saved before wallet RPCs. Custom antes accumulate once, including on retries; reloads recover the same contract. Older local ready-to-deal records resume automatically without another deduction. Legacy server contracts retain their existing protocol. Buttons now explicitly say Stake 25 chips / Stake 10 chips.
+
+Fresh Chrome evidence is in [direct-deal/](direct-deal/): four complete local championships (desktop/mobile Quick, desktop Custom Traditional, mobile Custom Chains), and three complete multiplayer UI championships under direct-deal/online. Online tests use isolated test earnings, never production wallets. The final normal-motion capture under direct-deal/final completed a three-hand championship on build 3c7f2ef49586 and captured all three enlarged effects, affected seats and two travelling Draw Two backs. The earlier fresh desktop/mobile runs include human hand victories. Historical screenshots below may show the superseded Start hand step.
 
 ## What inspection found
 
@@ -29,9 +35,9 @@ The workspace also had no Git repository, broader credential/database exclusions
 
 ## Retained and directly verified
 
-Quick Play uses a single 25-chip championship entry and Traditional rules; Custom Table chooses ruleset/seat count/equal antes and accumulates the pot. The sidebar is interactive during staking; mobile uses a compact sheet. No deal exists before human confirmation and bot commitments. Start hand deals only after commitments. Custom Continue leads to next-ante consent; Quick Continue requires no additional stakes. Insufficient chips have an explicit zero-stake route. Local simulated wallets/bot balances never fund online accounts.
+Quick Play uses a single 25-chip championship entry and Traditional rules; Custom Table chooses ruleset/seat count/equal antes and accumulates the pot. The sidebar is interactive during staking; mobile uses a compact sheet. No deal exists before human confirmation and bot commitments. The final explicit Stake Chips confirmation deals automatically; no separate Start hand step is required. Custom Continue leads to next-ante consent; Quick Continue requires no additional stakes. Insufficient chips have an explicit zero-stake route. Local simulated wallets/bot balances never fund online accounts.
 
-Ordinary hands show winner/standings/Continue over the existing table. Only the final championship overlay offers Rematch and Leave Table. Online continuation uses authoritative readiness and host controls; final rewards/pot wait for confirmed ledger settlement.
+Ordinary hands show winner/standings/Continue over the existing table. Only the final championship overlay offers Rematch and Leave Table. Online continuation uses authoritative player readiness; final rewards/pot wait for confirmed ledger settlement.
 
 ## Actual Chrome evidence
 
@@ -61,7 +67,7 @@ Ordinary hands show winner/standings/Continue over the existing table. Only the 
 
 ## Checks and limits
 
-- Production build and staging build pass; 74 unit/simulation tests pass.
+- Production build and staging build pass; 75 unit/simulation tests pass.
 - SQLite room, staking, wallet and browser reconnect suites pass, including chat/host transfer, private seats, lost ACKs, duplicate tabs, server restart, unanimous funded cancellation and settlement retries.
 - Staging/production isolation tested together in one local Workers runtime using the same account IDs, reservation IDs and room codes: no shared wallets, reservations or room state.
 - Staging artifact preflight and `cf deploy --prebuilt --mode staging --dry-run` pass for `pit-a-pat-online-staging`. SQLite Account/GameRoom exports and bindings target staging only; no LUDI references, production routes or namespace transfers.

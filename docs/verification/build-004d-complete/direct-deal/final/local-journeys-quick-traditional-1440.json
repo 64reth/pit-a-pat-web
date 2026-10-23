@@ -1,0 +1,29 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "sourceBuild": "3c7f2ef49586",
+      "steps": 1296,
+      "handModals": 2,
+      "humanWins": 0,
+      "championships": 1,
+      "initialMatch": "5986de59-fe5c-402e-a207-7fa0445459f9",
+      "roster": [
+        "You",
+        "Ama",
+        "Eshe",
+        "Zuri"
+      ],
+      "effects": [
+        "reverse",
+        "draw-two",
+        "skip"
+      ]
+    }
+  ],
+  "errors": []
+}

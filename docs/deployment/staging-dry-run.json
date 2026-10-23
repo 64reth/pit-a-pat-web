@@ -1,7 +1,7 @@
 {
-  "command": "cf deploy --prebuilt --mode staging --dry-run",
+  "command": "npm run staging:dry-run",
   "artifact": "artifacts/staging-build",
-  "sourceBuild": "34627c7bdbc5",
+  "sourceBuild": "3c7f2ef49586",
   "exitCode": 0,
   "stagingAccounts": true,
   "stagingRooms": true,

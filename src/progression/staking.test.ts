@@ -41,5 +41,10 @@ describe('local tabletop commitment state machine',()=>{
   expect(settled.chips).toBe(100-used+(winner==='you'?t.pot+10:5));expect(settled.localBots?.['bot-0']).toBe(1000-used+(winner==='bot-0'?t.pot:0));expect(settleLocalTable(settled)).toBe(settled);expect(refundLocalTable(p).localTable?.status).toBe('settled');
   const rematch={...settled,localTable:prepareLocalTable(type,mode,players,ante)};expect(rematch.localTable.id).not.toBe(t.id);expect(rematch.localTable.state).toBeNull();expect(rematch.chips).toBe(settled.chips);
  });
+ it('persists consent and dealing as one retry-safe local transition',()=>{
+  const stake=(p:ReturnType<typeof draft>)=>startLocalHand(commitQuickPlay(p));
+  const dealt=stake(draft());const restored=JSON.parse(JSON.stringify(dealt));
+  const retried=stake(restored);expect(retried.chips).toBe(75);expect(retried.localTable?.state?.game.id).toBe(dealt.localTable?.state?.game.id);expect(retried.localBots?.['bot-0']).toBe(LOCAL_BOT_STARTING_CHIPS-25);
+ });
  it('never funds a server account from a local starting balance',()=>{expect(freshProfile().chips).toBe(0);});
 });

@@ -37,6 +37,16 @@ export class GameRoom extends DurableObject<Env>{
   if(['playing','between-hands'].includes(s.status)&&missing){s.resumeStatus=s.status as 'playing'|'between-hands';s.status='paused';s.notice=`Waiting for ${missing.name} to reconnect. The hand and reserved chips are preserved.`;this.event(s,'pause',s.notice);}
   else if(s.status==='paused'&&!missing){s.status=s.resumeStatus??'playing';s.resumeStatus=null;s.notice='Your game has been restored.';if(s.stake&&s.settlement.status==='requires-reconciliation')s.settlement.status='reserved';this.event(s,'resume','All required players are back. Play can continue.');}
  }
+ // Called inside the room queue. Initial reservation intent is persisted before RPCs.
+ private async advanceCommitted(s:RoomData){
+  if(!s.gameType||s.players.length!==s.seats||s.players.some(p=>!p.ready||!this.connected(p)||(s.status==='lobby'||s.staking==='per-hand')&&!p.accepted))return;
+  if(s.status==='lobby'){await this.ctx.storage.setAlarm(Date.now()+2000);s.status='starting';s.settlement.status='pending';s.notice='All players committed. Dealing…';}
+  else if(s.status==='between-hands'&&s.game&&s.championship){
+   const next=nextChampionshipHand({match:s.championship,game:s.game},secureShuffle);
+   if(s.staking==='per-hand'&&s.game.winner){const hands=(s.committedHands??1)+1;if(hands>2*s.seats+1)throw Error('Maximum exposure reached.');s.committedHands=hands;}
+   s.game=next.game;s.championship=next.match;s.status='playing';s.notice=`Hand ${s.championship.handNumber}. ${s.game.players[s.game.current].name} starts.`;this.event(s,'hand',s.notice);
+  }
+ }
  private async arm(s:RoomData){
   const now=Date.now(),times:number[]=[];
   if(['starting','settling','cancelling'].includes(s.status))times.push(now+2000);
@@ -85,7 +95,7 @@ export class GameRoom extends DurableObject<Env>{
   const pair=new WebSocketPair(),connectionId=crypto.randomUUID(),returning=p.everConnected===true||p.connectionId!==''||p.presence==='left'||p.presence==='reconnecting'||p.presence==='disconnected';
   const old=this.ctx.getWebSockets().filter(ws=>(ws.deserializeAttachment() as Attachment|null)?.id===id);
   this.ctx.acceptWebSocket(pair[1]);pair[1].serializeAttachment({id,connectionId} satisfies Attachment);
-  p.everConnected=true;p.connectionId=connectionId;p.disconnectedAt=null;p.presence=returning?'rejoined':'connected';s.notice=returning?`${p.name} rejoined. Their game is restored.`:`${p.name} connected.`;this.event(s,returning?'rejoin':'presence',s.notice);this.transferHost(s);this.pause(s);this.commit(s);
+  p.everConnected=true;p.connectionId=connectionId;p.disconnectedAt=null;p.presence=returning?'rejoined':'connected';s.notice=returning?`${p.name} rejoined. Their game is restored.`:`${p.name} connected.`;this.event(s,returning?'rejoin':'presence',s.notice);this.transferHost(s);this.pause(s);await this.advanceCommitted(s);this.commit(s);await this.recover(s);
   for(const ws of old){this.send(ws,{type:'replaced'});try{ws.close(4001,'Connected in another tab');}catch{}}
   await this.arm(s);this.broadcast(s);return new Response(null,{status:101,webSocket:pair[0],headers:{'Sec-WebSocket-Protocol':'pitapat.v1'}});
  });}
@@ -146,7 +156,7 @@ export class GameRoom extends DurableObject<Env>{
      this.transferHost(s,s.hostId===a.id);
     }else throw Error('Unknown room action.');
    }
-   s.idleAt=now+this.idle();s.revision++;this.ctx.storage.transactionSync(()=>{this.save(s!);this.ctx.storage.sql.exec('INSERT INTO requests VALUES(?,?)',key,JSON.stringify({fingerprint:JSON.stringify(c),revision:s!.revision} satisfies RequestRecord));});
+   await this.advanceCommitted(s);s.idleAt=now+this.idle();s.revision++;this.ctx.storage.transactionSync(()=>{this.save(s!);this.ctx.storage.sql.exec('INSERT INTO requests VALUES(?,?)',key,JSON.stringify({fingerprint:JSON.stringify(c),revision:s!.revision} satisfies RequestRecord));});
    this.broadcast(s);this.send(ws,{type:'ack',requestId,revision:s.revision});
    if(['starting','settling','cancelling'].includes(s.status)){await this.recover(s);this.broadcast(s);}
    if(leave){this.send(ws,{type:'left'});try{ws.close(1000,'Left voluntarily');}catch{}}
