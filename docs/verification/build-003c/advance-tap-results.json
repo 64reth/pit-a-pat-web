@@ -1,0 +1,61 @@
+{
+  "results": [
+    {
+      "mode": "traditional",
+      "kind": "same-turn",
+      "seed": 34,
+      "penaltyCount": 1,
+      "declaredTurn": 33,
+      "winningTurn": 37,
+      "humanActions": 15,
+      "profile": {
+        "games": 1,
+        "wins": 1,
+        "coins": 20
+      }
+    },
+    {
+      "mode": "traditional",
+      "kind": "missing",
+      "seed": 46,
+      "penaltyCount": 1,
+      "declaredTurn": 13,
+      "winningTurn": 25,
+      "humanActions": 11,
+      "profile": {
+        "games": 1,
+        "wins": 1,
+        "coins": 20
+      }
+    },
+    {
+      "mode": "chains",
+      "kind": "same-turn",
+      "seed": 2,
+      "penaltyCount": 1,
+      "declaredTurn": 5,
+      "winningTurn": 17,
+      "humanActions": 6,
+      "profile": {
+        "games": 1,
+        "wins": 1,
+        "coins": 20
+      }
+    },
+    {
+      "mode": "chains",
+      "kind": "missing",
+      "seed": 2,
+      "penaltyCount": 1,
+      "declaredTurn": 9,
+      "winningTurn": 17,
+      "humanActions": 6,
+      "profile": {
+        "games": 1,
+        "wins": 1,
+        "coins": 20
+      }
+    }
+  ],
+  "pageErrors": []
+}

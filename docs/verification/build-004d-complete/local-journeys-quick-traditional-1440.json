@@ -1,0 +1,28 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "steps": 3980,
+      "handModals": 6,
+      "humanWins": 2,
+      "championships": 1,
+      "initialMatch": "b8378028-84b6-4abe-8f48-577adc348ed5",
+      "roster": [
+        "You",
+        "Sade",
+        "Eshe",
+        "Jelani"
+      ],
+      "effects": [
+        "draw-two",
+        "skip",
+        "reverse"
+      ]
+    }
+  ],
+  "errors": []
+}

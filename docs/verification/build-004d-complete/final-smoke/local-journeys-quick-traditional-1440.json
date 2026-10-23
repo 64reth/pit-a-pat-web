@@ -1,0 +1,25 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "sourceBuild": "34627c7bdbc5",
+      "steps": 948,
+      "handModals": 7,
+      "humanWins": 2,
+      "championships": 1,
+      "initialMatch": "f6dec1c8-b1dd-489f-a5cf-21be1dbf4daa",
+      "roster": [
+        "You",
+        "Malik",
+        "Nia",
+        "Kwame"
+      ],
+      "effects": []
+    }
+  ],
+  "errors": []
+}

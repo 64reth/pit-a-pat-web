@@ -1,0 +1,17 @@
+{
+  "report": [
+    "room chat delivery, harmless script/HTML text, reactions separate from TAP, muting, unread count and rate limiting",
+    "reload on own turn restores the private hand and current player without stale animation",
+    "lost acknowledgement restores accepted TAP from its durable receipt without a second declaration",
+    "reload during opponent turn restores the correct waiting state",
+    "uncertain unsent move waits for explicit Retry and reuses the exact original action ID",
+    "real offline/online recovery preserves the active player’s cards, TAP and standings and pauses peers",
+    "closed browser returns to its original seat with stored guest credentials",
+    "duplicate tab is replaced safely and manual Retry takes back the same seat",
+    "actual local server restart automatically restores the live match in both browsers",
+    "invalid session shows an explicit recovery path and never silently creates a replacement seat",
+    "intentional host departure is distinct from socket loss and transfers host controls deterministically",
+    "funded leave keeps entries committed, Reserved tables restores the same seat, and both players confirm the refund"
+  ],
+  "errors": []
+}

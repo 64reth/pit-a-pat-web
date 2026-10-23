@@ -1,0 +1,44 @@
+# Dependencies, generated builds and local development state
+node_modules/
+dist/
+.server/
+.cloudflare/
+.local-state*/
+.wrangler/
+artifacts/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.DS_Store
+
+# Credentials and machine-specific configuration (examples may be committed)
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.npmrc
+.npmrc.local
+.aws/
+.ssh/
+.codex/
+
+# Never commit player databases, logs, browser credentials or recordings
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+*.db-*
+*.log
+*storage-state*.json
+*storageState*.json
+*.webm
+*.mp4

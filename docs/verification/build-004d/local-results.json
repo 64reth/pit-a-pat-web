@@ -1,0 +1,44 @@
+{
+  "summary": [
+    {
+      "mode": "Traditional",
+      "players": 4,
+      "width": 1440,
+      "height": 1050,
+      "hands": 6,
+      "actions": 525,
+      "sawAction": true,
+      "standings": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "reward": {
+        "xp": 20,
+        "coins": 12,
+        "chips": 80
+      }
+    },
+    {
+      "mode": "Chains",
+      "players": 3,
+      "width": 390,
+      "height": 844,
+      "hands": 5,
+      "actions": 263,
+      "sawAction": true,
+      "standings": [
+        0,
+        3,
+        2
+      ],
+      "reward": {
+        "xp": 20,
+        "coins": 12,
+        "chips": 5
+      }
+    }
+  ],
+  "errors": []
+}

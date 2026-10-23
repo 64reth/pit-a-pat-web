@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "label": "online-traditional",
+      "steps": 91,
+      "hands": 5,
+      "standings": [
+        2,
+        3
+      ],
+      "stake": 0,
+      "reloaded": true
+    },
+    {
+      "label": "online-casual-rematch",
+      "steps": 105,
+      "hands": 4,
+      "standings": [
+        3,
+        1
+      ],
+      "stake": 0,
+      "reloaded": false
+    },
+    {
+      "label": "online-staked",
+      "steps": 67,
+      "hands": 5,
+      "standings": [
+        3,
+        2
+      ],
+      "stake": 10,
+      "reloaded": true
+    },
+    {
+      "label": "online-chains",
+      "steps": 70,
+      "hands": 5,
+      "standings": [
+        0,
+        0,
+        3,
+        2
+      ],
+      "stake": 0,
+      "reloaded": false
+    }
+  ],
+  "errors": []
+}

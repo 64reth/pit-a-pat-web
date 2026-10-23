@@ -1,0 +1,26 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 3,
+      "width": 390,
+      "steps": 826,
+      "handModals": 3,
+      "humanWins": 0,
+      "championships": 1,
+      "initialMatch": "97d738b9-f884-4f0f-ad7c-8c0b61387ce6",
+      "roster": [
+        "You",
+        "Malik",
+        "Nana"
+      ],
+      "effects": [
+        "reverse",
+        "draw-two"
+      ]
+    }
+  ],
+  "errors": []
+}

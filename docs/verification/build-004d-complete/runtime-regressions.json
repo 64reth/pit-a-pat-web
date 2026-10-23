@@ -1,0 +1,15 @@
+{
+  "report": [
+    "authenticated resume rejects same-name impostors; chat identity, plain text, reaction isolation, rate limit and duplicate protection",
+    "lost acknowledgement reconciles accepted action ID and restores the same armed-TAP hand without duplicate moves",
+    "restart and hibernation preserve deck/hand/phase/TAP/scores/reservations; duplicate tab replaces only its authenticated seat",
+    "host cannot unilaterally refund a funded losing match; leave is explicit, ticket revoked, host transferred, unanimous cancellation confirms refunds",
+    "concurrent duplicate Next Hand commands deal once, preserve standings, and reject stale hand context",
+    "funded grace expiry preserves entries and exposes reconciliation, then secure rejoin resumes without a reset",
+    "conflicting wallet settlement remains pending, then repairs/restarts without duplicate payout or a false settled claim",
+    "chat expires within one hour and terminal room cleanup revokes tickets, deletes private game state and removes request history",
+    "room-scoped chat never leaks to another room and expired invitations cannot join",
+    "lobby seat selection claims only a free seat and secure resume never silently reassigns it",
+    "insufficient funds explain the failed start and confirm any earlier reservation refunded"
+  ]
+}

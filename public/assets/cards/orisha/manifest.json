@@ -1,0 +1,242 @@
+{
+  "source": "docs/design/orisha-deck-reference.png",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "sha256": "db5ada05ae874295b9c92408bdac21c6063b3efa56f34e7c6c124f697b0377d1",
+  "method": "Direct sips PNG crop; no resampling, repainting or generative alteration",
+  "cards": [
+    {
+      "id": "J-spades",
+      "name": "Ogun",
+      "file": "J-spades.png",
+      "rect": [
+        156,
+        23,
+        201,
+        312
+      ]
+    },
+    {
+      "id": "Q-spades",
+      "name": "Oya",
+      "file": "Q-spades.png",
+      "rect": [
+        363,
+        23,
+        195,
+        312
+      ]
+    },
+    {
+      "id": "K-spades",
+      "name": "Shango",
+      "file": "K-spades.png",
+      "rect": [
+        562,
+        23,
+        194,
+        312
+      ]
+    },
+    {
+      "id": "J-hearts",
+      "name": "Oshun",
+      "file": "J-hearts.png",
+      "rect": [
+        894,
+        23,
+        196,
+        312
+      ]
+    },
+    {
+      "id": "Q-hearts",
+      "name": "Yemoja",
+      "file": "Q-hearts.png",
+      "rect": [
+        1095,
+        23,
+        195,
+        312
+      ]
+    },
+    {
+      "id": "K-hearts",
+      "name": "Obatala",
+      "file": "K-hearts.png",
+      "rect": [
+        1296,
+        23,
+        194,
+        312
+      ]
+    },
+    {
+      "id": "J-diamonds",
+      "name": "Eshu",
+      "file": "J-diamonds.png",
+      "rect": [
+        156,
+        354,
+        201,
+        311
+      ]
+    },
+    {
+      "id": "Q-diamonds",
+      "name": "Orunmila",
+      "file": "Q-diamonds.png",
+      "rect": [
+        363,
+        354,
+        195,
+        311
+      ]
+    },
+    {
+      "id": "K-diamonds",
+      "name": "Oduduwa",
+      "file": "K-diamonds.png",
+      "rect": [
+        562,
+        354,
+        194,
+        311
+      ]
+    },
+    {
+      "id": "J-clubs",
+      "name": "Erinle",
+      "file": "J-clubs.png",
+      "rect": [
+        894,
+        354,
+        196,
+        311
+      ]
+    },
+    {
+      "id": "Q-clubs",
+      "name": "Osanyin",
+      "file": "Q-clubs.png",
+      "rect": [
+        1095,
+        354,
+        195,
+        311
+      ]
+    },
+    {
+      "id": "K-clubs",
+      "name": "Aganju",
+      "file": "K-clubs.png",
+      "rect": [
+        1296,
+        354,
+        194,
+        311
+      ]
+    },
+    {
+      "id": "A-spades",
+      "name": "War & Power",
+      "file": "A-spades.png",
+      "rect": [
+        950,
+        731,
+        125,
+        208
+      ]
+    },
+    {
+      "id": "A-hearts",
+      "name": "Life & Protection",
+      "file": "A-hearts.png",
+      "rect": [
+        1079,
+        731,
+        130,
+        208
+      ]
+    },
+    {
+      "id": "A-diamonds",
+      "name": "Fate & Wisdom",
+      "file": "A-diamonds.png",
+      "rect": [
+        1213,
+        731,
+        135,
+        208
+      ]
+    },
+    {
+      "id": "A-clubs",
+      "name": "Earth & Nature",
+      "file": "A-clubs.png",
+      "rect": [
+        1352,
+        731,
+        131,
+        208
+      ]
+    },
+    {
+      "id": "2-spades",
+      "name": "War & Power",
+      "file": "2-spades.png",
+      "rect": [
+        438,
+        731,
+        118,
+        207
+      ]
+    },
+    {
+      "id": "5-hearts",
+      "name": "Life & Protection",
+      "file": "5-hearts.png",
+      "rect": [
+        560,
+        731,
+        116,
+        207
+      ]
+    },
+    {
+      "id": "8-diamonds",
+      "name": "Fate & Wisdom",
+      "file": "8-diamonds.png",
+      "rect": [
+        680,
+        731,
+        113,
+        207
+      ]
+    },
+    {
+      "id": "10-clubs",
+      "name": "Earth & Nature",
+      "file": "10-clubs.png",
+      "rect": [
+        797,
+        731,
+        115,
+        207
+      ]
+    },
+    {
+      "id": "back",
+      "name": "Original Orisha patterned back",
+      "file": "back.png",
+      "rect": [
+        33,
+        691,
+        189,
+        266
+      ]
+    }
+  ]
+}

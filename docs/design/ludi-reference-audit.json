@@ -1,0 +1,32 @@
+{
+  "reviewedDate": "2026-10-22",
+  "production": "https://ludi.allencreativetechnologies.uk/",
+  "source": "Read-only deployed HTML, CSS and JavaScript inspection; the public GitHub page reported an empty repository.",
+  "assets": {
+    "css": {
+      "url": "https://ludi.allencreativetechnologies.uk/assets/index-B06LBYVf.css",
+      "bytes": 82183,
+      "sha256": "62ea563330b8273cabe43b093c08b04d6d21dd9605438b965d288090e07f6860"
+    },
+    "js": {
+      "url": "https://ludi.allencreativetechnologies.uk/assets/index-DgKuy-RS.js",
+      "bytes": 368703,
+      "sha256": "26d1dc33eef484cc7413b1f8e08088034ec2fd6c314b3d2e13664637972e9ca9"
+    }
+  },
+  "fonts": {
+    "interface": "DM Sans, 400/500/600/700",
+    "display": "Barlow Condensed, 600/700/800/900",
+    "pitAPatBundling": "Local DM Sans variable and Barlow Condensed 700/800/900; SIL OFL licences retained."
+  },
+  "patterns": [
+    "44px minimum controls",
+    "6px button radius",
+    "160ms feedback",
+    "yellow primary and ivory secondary actions",
+    "650px portrait breakpoint",
+    "1000px compact layout breakpoint",
+    "sticky sheet header and independently scrollable body",
+    "safe areas and reduced motion"
+  ]
+}

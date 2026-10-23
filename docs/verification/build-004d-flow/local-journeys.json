@@ -1,0 +1,50 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "results": [
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 1440,
+      "steps": 691,
+      "handModals": 5,
+      "humanWins": 2,
+      "championships": 1,
+      "initialMatch": "0cd86db2-d491-44c2-9bb9-6b6a7a4c05ba"
+    },
+    {
+      "type": "quick",
+      "mode": "traditional",
+      "seats": 4,
+      "width": 390,
+      "steps": 552,
+      "handModals": 4,
+      "humanWins": 1,
+      "championships": 1,
+      "initialMatch": "93d3bf9f-076f-4a1b-bec6-7c5fdf63df11"
+    },
+    {
+      "type": "custom",
+      "mode": "traditional",
+      "seats": 2,
+      "width": 1440,
+      "steps": 384,
+      "handModals": 4,
+      "humanWins": 2,
+      "championships": 1,
+      "initialMatch": "8f3dd2dd-c28c-4119-9417-23c619759ce9"
+    },
+    {
+      "type": "custom",
+      "mode": "chains",
+      "seats": 3,
+      "width": 390,
+      "steps": 361,
+      "handModals": 2,
+      "humanWins": 0,
+      "championships": 1,
+      "initialMatch": "b2e26a98-0cd5-40ca-98d5-14c93f7fc702"
+    }
+  ],
+  "errors": []
+}

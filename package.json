@@ -1,0 +1,57 @@
+{
+  "name": "pit-a-pat-web",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && tsc -p tsconfig.server.json && vite build",
+    "test": "vitest run",
+    "test:browser": "node scripts/play-flow-browser-check.mjs",
+    "dev:server": "node scripts/dev-server.mjs",
+    "build:server": "node scripts/build-server.mjs",
+    "typecheck:server": "tsc -p tsconfig.server.json",
+    "test:online": "node scripts/play-flow-online-check.mjs",
+    "test:rooms": "node scripts/session-room-check.mjs",
+    "test:wallets": "node scripts/wallet-check.mjs",
+    "preview": "npm run build && node scripts/preview.mjs",
+    "test:sessions": "node scripts/session-browser-check.mjs",
+    "build:staging": "PITAPAT_STAGE=1 npm run build",
+    "test:staking": "node scripts/staking-room-check.mjs",
+    "test:staking:browser": "node scripts/play-flow-browser-check.mjs",
+    "prepare:staging": "npm run build:staging && node scripts/staging-preflight.mjs && node scripts/save-staging-artifact.mjs",
+    "staging:dry-run": "npm run prepare:staging && cf deploy --prebuilt --mode staging --dry-run",
+    "test:isolation": "node scripts/staging-isolation-check.mjs",
+    "check:release": "node scripts/check-release-files.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/build-output-utils": "0.8.0",
+    "@cloudflare/workers-types": "^5.20261022.1",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "cf": "^0.15.0",
+    "miniflare": "^5.20260921.1-alpha",
+    "playwright": "^1.64.1",
+    "rolldown": "^1.2.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "undici": "^7.29.1",
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

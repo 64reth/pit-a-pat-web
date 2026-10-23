@@ -1,0 +1,37 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "report": [
+    {
+      "type": "quick",
+      "width": 320,
+      "cardTop": 256,
+      "cardBottom": 335,
+      "sheetTop": 376.8125,
+      "viewport": 740
+    },
+    {
+      "type": "custom",
+      "width": 320,
+      "cardTop": 272,
+      "cardBottom": 351,
+      "sheetTop": 376.8125,
+      "viewport": 740
+    },
+    {
+      "type": "quick",
+      "width": 390,
+      "cardTop": 256,
+      "cardBottom": 335,
+      "sheetTop": 430.890625,
+      "viewport": 844
+    },
+    {
+      "type": "custom",
+      "width": 390,
+      "cardTop": 256,
+      "cardBottom": 335,
+      "sheetTop": 430.890625,
+      "viewport": 844
+    }
+  ]
+}

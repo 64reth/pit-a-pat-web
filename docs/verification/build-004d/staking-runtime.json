@@ -1,0 +1,9 @@
+{
+  "report": [
+    "Custom ante requires every human consent before deal; reserves bounded maximum exposure once and deduplicates starting",
+    "Next hand requires fresh ante consent; duplicate command accumulates one equal ante per seat without another wallet deduction",
+    "Runtime restart restores pot, exposure, hand and accepted commitment receipt",
+    "Authoritative champion receives full accumulating pot; unused exposure refunded; duplicate settlement and late refund cannot pay twice",
+    "Rematch opens fresh commitments; explicit zero-stake choice resets all readiness without deducting chips"
+  ]
+}

@@ -1,0 +1,11 @@
+import './build-server.mjs';import {runtime} from './worker-runtime.mjs';import production from '../cloudflare.config.ts';import staging from '../cloudflare.staging.config.ts';import {rolldown} from 'rolldown';import {mkdtemp} from 'node:fs/promises';import assert from 'node:assert/strict';
+const bundle=await rolldown({input:'scripts/championship-fixture.ts'});await bundle.write({file:'.server/isolation-fixture.mjs',format:'esm'});await bundle.close();const {simulate}=await import('../.server/isolation-fixture.mjs');
+process.env.PITAPAT_SERVER_PORT='0';process.env.PITAPAT_STATE_DIR=await mkdtemp('/private/tmp/pitapat-isolation-');const mf=runtime([production,staging]);
+try{
+ await mf.ready;const prod=await mf.getBindings('pit-a-pat-online'),stage=await mf.getBindings('pit-a-pat-online-staging'),id=crypto.randomUUID(),other=crypto.randomUUID(),pa=prod.ACCOUNTS.getByName(id),sa=stage.ACCOUNTS.getByName(id);
+ await pa.create(id,'0'.repeat(64),'Production test');await sa.create(id,'0'.repeat(64),'Staging test');
+ const players=[{id,name:'Production test',bot:false},{id:other,name:'Other',bot:false}];for(let i=0;i<2;i++){const result=simulate(crypto.randomUUID(),players);await pa.settleChampionship('TEST',result.match,result.game,0);}
+ await pa.reserve('prod-reserve','SAMECODE',10);assert.equal((await sa.snapshot()).profile.chips,0);assert.equal((await sa.snapshot()).reserved,0);assert.equal((await sa.snapshot()).profile.games,0);await assert.rejects(()=>sa.reserve('prod-reserve','SAMECODE',10));assert.equal((await pa.snapshot()).reserved,10);
+ const pRoom=await prod.ROOMS.getByName('SAMECODE').initialize('SAMECODE',id,'Production test',{mode:'traditional',seats:2,stake:0}),sRoom=await stage.ROOMS.getByName('SAMECODE').initialize('SAMECODE',id,'Staging test',{mode:'chains',seats:2,stake:0});assert.notEqual(pRoom.room.roundId,sRoom.room.roundId);assert.equal((await prod.ROOMS.getByName('SAMECODE').join(id,'Production test',true)).room.mode,'traditional');assert.equal((await stage.ROOMS.getByName('SAMECODE').join(id,'Staging test',true)).room.mode,'chains');
+ console.log('PASS: production/staging in one Workers runtime keep identical account IDs, reservation IDs and room codes in independent SQLite namespaces; no wallet or room transfer');
+}finally{await mf.dispose();}

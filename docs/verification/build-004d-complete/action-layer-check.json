@@ -1,0 +1,21 @@
+{
+  "origin": "http://127.0.0.1:8788",
+  "report": [
+    {
+      "width": 390,
+      "effect": "skip",
+      "scale": 1.5,
+      "aboveSeats": true,
+      "top": 115.9088363647461,
+      "right": 343.9344482421875
+    },
+    {
+      "width": 320,
+      "effect": "draw-two",
+      "scale": 1.5,
+      "aboveSeats": true,
+      "top": 161.703125,
+      "right": 292.3487243652344
+    }
+  ]
+}
