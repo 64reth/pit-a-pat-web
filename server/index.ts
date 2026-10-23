@@ -12,6 +12,7 @@ export default {async fetch(request:Request,env:Env):Promise<Response>{
  try{
   if(!sameOrigin(request))return json({error:'Origin not allowed.'},403);
   if(Number(request.headers.get('Content-Length')??0)>4096)return json({error:'Request too large.'},413);
+  if(url.pathname==='/api/config'&&request.method==='GET')return json({fundedMatches:env.FUNDED_MATCHES_ENABLED==='true',environment:env.DEPLOYMENT_ENVIRONMENT});
   const who=await identity(request,env);
   if(url.pathname==='/api/session'&&request.method==='POST'){
    if(who)return json(await who.account.snapshot());const b=await body(request),id=crypto.randomUUID(),secret=token();const result=await env.ACCOUNTS.getByName(id).create(id,await hashHex(secret),displayName(b.name??'Player'));
@@ -22,7 +23,7 @@ export default {async fetch(request:Request,env:Env):Promise<Response>{
   if(url.pathname==='/api/profile'&&request.method==='POST'){const b=await body(request);return json(await who.account.rename(displayName(b.name)));}
   if(url.pathname==='/api/cosmetics'&&request.method==='POST'){const b=await body(request);if(typeof b.id!=='string')throw new Error('Choose a card back.');return json(await who.account.cosmetic(b.id));}
   if(url.pathname==='/api/rooms'&&request.method==='POST'){
-   const b=await body(request);await who.account.permitRoom();const profile=await who.account.snapshot();const code=roomCode();
+   const b=await body(request);if(b.stake!==0&&env.FUNDED_MATCHES_ENABLED!=='true')return json({error:'Funded online matches are disabled on this staging environment. Choose zero-stake play.'},403);await who.account.permitRoom();const profile=await who.account.snapshot();const code=roomCode();
    const result=await env.ROOMS.getByName(code).initialize(code,who.id,profile.profile.name,{mode:b.mode as 'traditional'|'chains',seats:b.seats as number,stake:b.stake as number,staking:b.staking as 'championship'|'per-hand'|undefined,gameType:b.gameType as 'quick'|'custom'|undefined});return json(result,201);
   }
   const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{8})\/(join|resume|socket)$/);

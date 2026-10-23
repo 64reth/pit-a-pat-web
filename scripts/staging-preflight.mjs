@@ -12,6 +12,7 @@ for(const [binding,cls] of [['ACCOUNTS','Account'],['ROOMS','GameRoom']]){
  assert.notEqual(worker.env[binding].worker,production.worker.env[binding].worker);
  assert.ok(!('id' in worker.env[binding]),'No shared namespace ID may be pinned');
 }
+assert.equal(worker.env.FUNDED_MATCHES_ENABLED.value,'false','Public funded staging matches must stay disabled');assert.equal(worker.env.DEPLOYMENT_ENVIRONMENT.value,'staging');
 assert.equal(worker.env.ASSETS.type,'assets');assert.ok(!worker.routes?.length,'No production custom domain/routes');
 assert.ok(!JSON.stringify(worker).toLowerCase().includes('ludi'),'No LUDI binding or resource');
 const plan={worker:worker.name,mode:root.buildContext.mode,bindings:worker.env,exports:worker.exports,namespaceLifecycle:'cf exports creates independent SQLite Account/GameRoom namespaces for this Worker; no transfers, renames, imports or deletes',playerData:'Empty staging namespaces only. Never copy .local-state, production wallets, guest cookies or browser saves.',routing:'Staging Worker only. No production routes or LUDI references.',deployed:false};
